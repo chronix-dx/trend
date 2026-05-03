@@ -6,11 +6,11 @@
     <title>PipeFlow DX | トレンドレポート・ポータル</title>
     <style>
         :root {
-            /* 添付画像(image_0d2b57.jpg)から抽出した深い背景色 */
+            /* 添付画像の背景に合わせた深いグリーン/グレー */
             --bg-dark: #1a2e2a; 
             --accent-gold: #fbd38d;
             --accent-blue: #90cdf4;
-            --card-bg: rgba(255, 255, 255, 0.07);
+            --card-bg: rgba(255, 255, 255, 0.05);
             --text-main: #ffffff;
             --btn-bg: #c05621;
         }
@@ -25,148 +25,111 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* ヘッダー・ロゴエリア（homeへの導線） */
+        /* ヘッダー・ロゴ */
         header {
             display: flex;
             justify-content: flex-start;
-            align-items: center;
-            padding: 1.5rem 0;
-            margin-bottom: 3rem;
+            padding: 1rem 0;
         }
 
         .logo-home {
             background: #ffffff;
             padding: 8px 20px;
             border-radius: 4px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .logo-home:hover {
-            opacity: 0.9;
+            display: inline-block;
         }
 
         .logo-home img {
-            height: 35px; /* logo.pngのサイズに最適化 */
+            height: 35px;
             width: auto;
+            vertical-align: middle;
         }
 
-        /* ヒーローセクション（コンセプトの提示） */
+        /* メインビジュアルセクション */
         .hero {
             text-align: center;
-            margin-bottom: 4rem;
+            margin: 2rem 0 4rem 0;
+        }
+
+        .trend-map {
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--accent-gold);
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.85;
-        }
-
-        /* レポートグリッド（各カテゴリーの網） */
-        .report-grid {
+        /* カテゴリー詳細グリッド */
+        .detail-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .card {
+        .category-section {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-radius: 8px;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-        }
-
-        .card h2 {
-            font-size: 1.4rem;
+        .category-section h2 {
+            font-size: 1.3rem;
             color: var(--accent-blue);
             margin-top: 0;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
         }
 
-        .card p {
-            font-size: 0.95rem;
-            opacity: 0.9;
+        .category-section p {
+            font-size: 0.9rem;
             flex-grow: 1;
+            margin-bottom: 1.5rem;
         }
 
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            background: rgba(144, 205, 244, 0.2);
-            color: var(--accent-blue);
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        /* PDF・リンクボタン */
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--btn-bg);
+        /* PDFリンクボタン */
+        .btn-download {
+            background: var(--btn-bg);
             color: white;
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 6px;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
             font-weight: bold;
-            margin-top: 1.5rem;
-            transition: background 0.2s ease;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
 
-        .btn-action:hover {
-            background-color: #a0441a;
+        .btn-download:hover {
+            background: #a0441a;
         }
 
-        .btn-action.pdf::before {
-            content: "📄";
-            margin-right: 8px;
-        }
-
-        .btn-disabled {
-            background-color: #4a5568;
+        .btn-download.locked {
+            background: #4a5568;
             cursor: not-allowed;
         }
 
-        /* フッター */
         footer {
-            margin-top: 5rem;
-            padding: 3rem 0;
+            margin-top: 4rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.85rem;
+            padding: 2rem;
             opacity: 0.6;
-        }
-
-        /* レスポンシブ対応 */
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .report-grid { grid-template-columns: 1fr; }
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
     </style>
 </head>
@@ -174,32 +137,48 @@
 
 <div class="container">
     <header>
-        <a href="https://nakajimakan14550.github.io/home" class="logo-home">
-            <img src="logo.png" alt="CHRONIX HOME">
+        <a href="index.html" class="logo-home">
+            <img src="logo.png" alt="CHRONIX">
         </a>
     </header>
 
-    <section class="hero">
-        <h1>物理的限界と次世代光学戦略</h1>
-        <p>AI後処理では到達できない、物理層での波面制御がもたらす「真のDX」。</p>
-    </section>
+    <div class="hero">
+        <img src="trend.png" alt="Trend Report Map" class="trend-map">
+        <h1>技術戦略ポータル</h1>
+        <p>物理限界を突破するナノスケール制御の最前線</p>
+    </div>
 
-    <main class="report-grid">
-        <article class="card">
-            <span class="tag">White Paper</span>
-            <h2>補償光学の深層：微細化の限界突破</h2>
-            <p>静的光学系の解像度限界をデフォーマブルミラーで打破。環境変化による解像度低下を抑え、95%以上の維持率を実現する手法を詳述。</p>
-            <a href="ao.pdf" class="btn-action pdf">PDF: 技術白書 (ao.pdf)</a>
-        </article>
+    <main class="detail-grid">
+        <section class="category-section">
+            <h2>宇宙・防衛</h2>
+            <p>機体振動や熱環境による波面歪みを、kHzオーダーでリアルタイム補正。極限環境下での diffraction-limited performance を追求します。</p>
+            <a href="ao.pdf" class="btn-download">最新レポート (ao.pdf) を開く</a>
+        </section>
 
-        <article class="card">
-            <span class="tag">Trend Report</span>
-            <h2>光計測の未来：動的補正の標準化</h2>
-            <p>ソフトウェア補正（AI）に依存しすぎたDXの罠とは？物理的な情報の欠落を復元するALPAO技術の優位性と市場分析。</p>
-            <a href="ao2.pdf" class="btn-action pdf">PDF: トレンドレポート (ao2.pdf)</a>
-        </article>
+        <section class="category-section">
+            <h2>半導体</h2>
+            <p>静的光学系の物理限界を打破し、歩留まりの停滞を解消。AI後処理では復元不可能な「位相情報の欠落」を物理層で制御します。</p>
+            <a href="ao2.pdf" class="btn-download">最新レポート (ao2.pdf) を開く</a>
+        </section>
 
-        <article class="card">
-            <span class="tag">Inspection</span>
-            <h2>マシンビジョン・検査装置</h2>
-            <p>ラインセンサーの露光不足と歪みをリアルタイム補正。物理層でのノイズ低
+        <section class="category-section">
+            <h2>マシンビジョン</h2>
+            <p>高速ラインスキャンにおける露光不足と像の歪みを、液体レンズやDMで動的補正。AIの「目」を物理層から再定義します。</p>
+            <a href="#" class="btn-download locked">近日公開: 5分解説レポート</a>
+        </section>
+
+        <section class="category-section">
+            <h2>コネクター・ケーブル</h2>
+            <p>次世代半導体検査や防衛通信における信号整合性（SI）確保。見落とされがちな「通信の血管」を最適化するインフラ戦略。</p>
+            <a href="#" class="btn-download locked">近日公開: インフラ最適化ガイド</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>PipeFlow DX Project | 文責: 中島漢 (Kan Nakajima)</p>
+        <p>&copy; 2026 Nakajima Trend Reports / CHRONIX</p>
+    </footer>
+</div>
+
+</body>
+</html>
