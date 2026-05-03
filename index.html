@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PipeFlow DX | トレンドレポート・ポータル</title>
+    <title>PipeFlow DX | テクノロジー戦略ポータル</title>
     <style>
         :root {
-            /* 添付画像の背景に合わせた深いグリーン/グレー */
             --bg-dark: #1a2e2a; 
             --accent-gold: #fbd38d;
             --accent-blue: #90cdf4;
@@ -30,7 +29,6 @@
             padding: 2rem;
         }
 
-        /* ヘッダー・ロゴ */
         header {
             display: flex;
             justify-content: flex-start;
@@ -50,7 +48,6 @@
             vertical-align: middle;
         }
 
-        /* メインビジュアルセクション */
         .hero {
             text-align: center;
             margin: 2rem 0 4rem 0;
@@ -71,7 +68,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* カテゴリー詳細グリッド */
         .detail-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -85,6 +81,12 @@
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
+            transition: transform 0.2s;
+        }
+
+        .category-section:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
         }
 
         .category-section h2 {
@@ -101,12 +103,11 @@
             margin-bottom: 1.5rem;
         }
 
-        /* PDFリンクボタン */
         .btn-download {
             background: var(--btn-bg);
             color: white;
             text-decoration: none;
-            padding: 10px;
+            padding: 12px;
             border-radius: 4px;
             text-align: center;
             font-weight: bold;
@@ -121,13 +122,14 @@
         .btn-download.locked {
             background: #4a5568;
             cursor: not-allowed;
+            opacity: 0.6;
         }
 
         footer {
             margin-top: 4rem;
             text-align: center;
             padding: 2rem;
-            opacity: 0.6;
+            opacity: 0.5;
             font-size: 0.8rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
@@ -144,38 +146,38 @@
 
     <div class="hero">
         <img src="trend.png" alt="Trend Report Map" class="trend-map">
-        <h1>技術戦略ポータル</h1>
-        <p>物理限界を突破するナノスケール制御の最前線</p>
+        <h1>定期配信 5分トレンドレポート</h1>
+        <p>物理限界を突破し、製造現場のアーキテクチャを再定義する</p>
     </div>
 
     <main class="detail-grid">
         <section class="category-section">
             <h2>宇宙・防衛</h2>
-            <p>機体振動や熱環境による波面歪みを、kHzオーダーでリアルタイム補正。極限環境下での diffraction-limited performance を追求します。</p>
+            <p>機体振動や熱環境による波面歪みをkHzオーダーでリアルタイム補正。AI後処理では到達不能な極限の結像性能を追求します。</p>
             <a href="ao.pdf" class="btn-download">最新レポート (ao.pdf) を開く</a>
         </section>
 
         <section class="category-section">
             <h2>半導体</h2>
-            <p>静的光学系の物理限界を打破し、歩留まりの停滞を解消。AI後処理では復元不可能な「位相情報の欠落」を物理層で制御します。</p>
+            <p>ナノスケール検査における歩留まりの停滞を「動的光学系」で打破。物理層での収差制御により、AI判定の精度を根底から引き上げます。</p>
             <a href="ao2.pdf" class="btn-download">最新レポート (ao2.pdf) を開く</a>
         </section>
 
         <section class="category-section">
             <h2>マシンビジョン</h2>
-            <p>高速ラインスキャンにおける露光不足と像の歪みを、液体レンズやDMで動的補正。AIの「目」を物理層から再定義します。</p>
-            <a href="#" class="btn-download locked">近日公開: 5分解説レポート</a>
+            <p>産業用PCへの依存を断ち、カメラ内部でAI判定を完結。通信遅延と環境リスクを排除する「PCレス検査」への転換戦略を詳述します。</p>
+            <a href="code.pdf" class="btn-download">最新レポート (code.pdf) を開く</a>
         </section>
 
         <section class="category-section">
             <h2>コネクター・ケーブル</h2>
-            <p>次世代半導体検査や防衛通信における信号整合性（SI）確保。見落とされがちな「通信の血管」を最適化するインフラ戦略。</p>
+            <p>次世代半導体検査や高速通信における信号整合性（SI）の確保。見落とされがちな「インフラの血管」を最適化する最前線。</p>
             <a href="#" class="btn-download locked">近日公開: インフラ最適化ガイド</a>
         </section>
     </main>
 
     <footer>
-        <p>PipeFlow DX Project | 文責: 中島漢 (Kan Nakajima)</p>
+        <p>Confidential technical portal based on PipeFlow DX methodology.</p>
         <p>&copy; 2026 Nakajima Trend Reports / CHRONIX</p>
     </footer>
 </div>
