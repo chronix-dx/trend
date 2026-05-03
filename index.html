@@ -3,162 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>定期配信トレンドレポート | PipeFlow DX</title>
+    <title>PipeFlow DX | トレンドレポート・ポータル</title>
     <style>
         :root {
-            --primary-color: #1a365d;
-            --accent-color: #c05621;
-            --bg-color: #f7fafc;
-            --text-color: #2d3748;
+            /* 添付画像(image_0d2b57.jpg)から抽出した深い背景色 */
+            --bg-dark: #1a2e2a; 
+            --accent-gold: #fbd38d;
+            --accent-blue: #90cdf4;
+            --card-bg: rgba(255, 255, 255, 0.07);
+            --text-main: #ffffff;
+            --btn-bg: #c05621;
         }
+
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
         }
-        header {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 2rem;
         }
-        .main-visual {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+        /* ヘッダー・ロゴエリア（homeへの導線） */
+        header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1.5rem 0;
             margin-bottom: 3rem;
         }
-        .report-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .card h2 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        .tag {
-            display: inline-block;
-            background: #e2e8f0;
-            padding: 0.2rem 0.5rem;
+
+        .logo-home {
+            background: #ffffff;
+            padding: 8px 20px;
             border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 1rem;
-        }
-        .stats {
-            background: #fffaf0;
-            border: 1px solid #feebc8;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-        .english-phrase {
-            font-style: italic;
-            color: #4a5568;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 1rem;
-            margin: 1rem 0;
-        }
-        .cta-button {
-            display: block;
-            background: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 0.8rem;
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 1.5rem;
             transition: opacity 0.3s;
         }
-        .cta-button:hover {
+
+        .logo-home:hover {
             opacity: 0.9;
         }
-        footer {
+
+        .logo-home img {
+            height: 35px; /* logo.pngのサイズに最適化 */
+            width: auto;
+        }
+
+        /* ヒーローセクション（コンセプトの提示） */
+        .hero {
             text-align: center;
-            padding: 3rem;
-            font-size: 0.8rem;
-            color: #718096;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.85;
+        }
+
+        /* レポートグリッド（各カテゴリーの網） */
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            flex-grow: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(144, 205, 244, 0.2);
+            color: var(--accent-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* PDF・リンクボタン */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--btn-bg);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: background 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #a0441a;
+        }
+
+        .btn-action.pdf::before {
+            content: "📄";
+            margin-right: 8px;
+        }
+
+        .btn-disabled {
+            background-color: #4a5568;
+            cursor: not-allowed;
+        }
+
+        /* フッター */
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .report-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>定期配信トレンドレポート・サイト</h1>
-    <p>5分で掴む、極限環境と微細化の物理限界突破戦略</p>
-</header>
-
 <div class="container">
-    <img src="trend.png" alt="トレンドレポート カテゴリー別ダッシュボード" class="main-visual">
+    <header>
+        <a href="index.html" class="logo-home">
+            <img src="logo.png" alt="CHRONIX HOME">
+        </a>
+    </header>
 
-    <div class="report-grid">
-        <div class="card">
-            <span class="tag">宇宙・防衛</span>
-            <h2>極限環境での信頼性と最新積層技術</h2>
-            <p>機体の振動や過酷な熱環境下でも、kHzオーダーの高速応答で波面歪みをリアルタイム補正 [cite: 15, 37]。</p>
-            <div class="english-phrase">
-                "The deformable mirror ensures diffraction-limited performance." [cite: 22]
-            </div>
-            <a href="#" class="cta-button">最新レポート(Vol.01)を見る</a>
-        </div>
+    <section class="hero">
+        <h1>物理的限界と次世代光学戦略</h1>
+        <p>AI後処理では到達できない、物理層での波面制御がもたらす「真のDX」。</p>
+    </section>
 
-        <div class="card">
-            <span class="tag">半導体</span>
-            <h2>ナノスケール検査と歩留まり停滞の打破</h2>
-            <p>静的光学系の物理限界(R = k1 * λ / NA)を突破し、解像度維持率を95%以上へ [cite: 8, 11]。</p>
-            <div class="stats">
-                <strong>定量的メリット:</strong> 再検査率(Rework)の低減とスループットの最大化 [cite: 11]。
-            </div>
-            <div class="english-phrase">
-                "We are approaching the physical limits of static optics." [cite: 42]
-            </div>
-            <a href="#" class="cta-button">詳細エビデンスを確認</a>
-        </div>
+    <main class="report-grid">
+        <article class="card">
+            <span class="tag">White Paper</span>
+            <h2>補償光学の深層：微細化の限界突破</h2>
+            <p>静的光学系の解像度限界をデフォーマブルミラーで打破。環境変化による解像度低下を抑え、95%以上の維持率を実現する手法を詳述。</p>
+            <a href="ao.pdf" class="btn-action pdf">PDF: 技術白書 (ao.pdf)</a>
+        </article>
 
-        <div class="card">
-            <span class="tag">マシンビジョン・検査装置</span>
-            <h2>AIの「目」を物理層から強化する</h2>
-            <p>ソフトウェア後処理では不可能な「欠落した物理情報」の復元を、入力段階の波面制御で実現 [cite: 9, 29]。</p>
-            <div class="english-phrase">
-                "This technology reduces reliance on post-processing software." [cite: 46]
-            </div>
-            <a href="#" class="cta-button">動的補正の仕組みを学ぶ</a>
-        </div>
+        <article class="card">
+            <span class="tag">Trend Report</span>
+            <h2>光計測の未来：動的補正の標準化</h2>
+            <p>ソフトウェア補正（AI）に依存しすぎたDXの罠とは？物理的な情報の欠落を復元するALPAO技術の優位性と市場分析。</p>
+            <a href="ao2.pdf" class="btn-action pdf">PDF: トレンドレポート (ao2.pdf)</a>
+        </article>
 
-        <div class="card">
-            <span class="tag">コネクター・ケーブル</span>
-            <h2>大容量通信のボトルネックと整合性確保</h2>
-            <p>極限環境下での信号整合性(SI)確保は、システム全体の信頼性を左右する「隠れた重要因子」です。</p>
-            <div class="english-phrase">
-                "Let's focus on mitigating the wavefront error at the source." [cite: 19]
-            </div>
-            <a href="#" class="cta-button">インフラ最適化の相談</a>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>PipeFlow DX Project | 文責: 中島漢 (Kan Nakajima) [cite: 24, 48]</p>
-    <p>&copy; 2026 Nakajima Trend Reports. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+        <article class="card">
+            <span class="tag">Inspection</span>
+            <h2>マシンビジョン・検査装置</h2>
+            <p>ラインセンサーの露光不足と歪みをリアルタイム補正。物理層でのノイズ低
