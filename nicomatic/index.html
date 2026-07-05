@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicomatic マイクロコネクタソリューション | PipeFlow DX</title>
+    <style>
+        :root {
+            --bg-dark: #1a2e2a; 
+            --accent-gold: #fbd38d;
+            --accent-blue: #90cdf4;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --btn-bg: #c05621;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 1rem 0;
+        }
+
+        .logo-home {
+            background: #ffffff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .logo-home:hover {
+            opacity: 0.9;
+        }
+
+        .logo-home img {
+            height: 35px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--accent-blue);
+        }
+
+        .focused-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(144, 205, 244, 0.25);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 3rem;
+        }
+
+        .focused-section h2 {
+            font-size: 1.6rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .focused-section p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: justify;
+        }
+
+        .audio-player-box {
+            background: rgba(144, 205, 244, 0.12);
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .audio-label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            display: block;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+        }
+
+        .audio-caption {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .btn-download {
+            background: var(--btn-bg);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .btn-download:hover {
+            background: #a0441a;
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        .back-to-portal {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-to-portal a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-to-portal a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="https://chronix-dx.github.io/home/" class="logo-home">
+            <img src="../logo.png" alt="CHRONIX">
+        </a>
+    </header>
+
+    <div class="hero">
+        <h1>技術トレンド個別解説</h1>
+        <p>過酷な環境を生き抜く、軽量化と超堅牢性の高次元融合</p>
+    </div>
+
+    <main>
+        <section class="focused-section">
+            <h2><span>🔌</span> NICOMATIC：モジュラー型高密度マイクロコネクタ</h2>
+            
+            <p style="line-height: 1.8; color: rgba(255, 255, 255, 0.9); text-align: justify;">
+                <b>■ 今夜のメインテーマ：システムの命運を握る「コンタクト（接点）」の信頼性</b><br>
+                どれほど強力なプロセッサを積み、どれほど高度なセンサーを配置しても、それらを繋ぐ1本のケーブル、1つのコネクタが振動で瞬断しただけで、数億円規模のシステムが一瞬で沈黙することがあります。特にドローンやロボティクス、過酷な産業用装置の内部は、常に激しい機械的振動や熱変化にさらされています。高密度な基板設計を進める中で、コネクタに割けるスペースは年々狭くなる一方、要求される信頼性は厳しくなるばかり。今夜は、この「過酷な環境での小型化」という矛盾を突破する、次世代インターコネクト技術の核心に迫ります。<br><br>
+
+                <b>■ なぜ、従来の標準的な丸型・角型コネクタでは現代の現場に適合できないのか</b><br>
+                MIL規格に準拠したような従来の堅牢なコネクタは、確かに信頼性は高いものの、重く、大きく、レイアウトの柔軟性に欠けるという課題がありました。一方で、コンシューマー向けをルーツに持つ一般的なマイクロコネクタは、基板上の省スペース化には貢献するものの、産業現場の激しい衝撃や、長年の脱着による金属疲労で接触不良を起こすリスクを排除しきれません。「軽くて小さいこと」と「絶対に切れないこと」をトレードオフにしない設計が、今まさに求められています。<br><br>
+
+                <b>■ フランスNicomatic社が導き出した、モジュラー型インターコネクトシステム</b><br>
+                この難題に対して、フランスのNicomatic（ニコマティック）社は独自のモジュラー思想で答えを出しました。彼らのマイクロコネクタシリーズ（DMMやEMMなど）は、航空宇宙規格クラスの極めて高い耐振動・耐衝撃性を備えながら、驚異的な薄型・軽量化を達成しています。独自のピンコンタクト技術により、細微なサイズでありながら確実な接触圧を維持し、微小な電気信号からパワーラインまでを一つのコンパクトなハウジング内に混在（ハイブリッド化）させることが可能です。さらに、モジュラー設計のため、ピン数や形状を現場の要求に合わせて自在にカスタムできる柔軟性も備えています。<br><br>
+
+                <b>■ 物理的な「接続」の強化こそ、デジタルトランスフォーメーションの基盤</b><br>
+                自動運転、過酷なファクトリーオートメーション、高高度でのセンシング。すべてのDX（デジタルトランスフォーメーション）は、物理的な電気信号が正しく伝わるという大前提の上に成り立っています。見落とされがちな「接続の信頼性」へ正しく光を当て、物理的な限界をモジュラー光学・メカニクスで解決していくこと。これこそが、次世代の過酷なハードウェア開発を確実に成功へと導く鍵となるでしょう。
+            </p>
+
+            <div class="audio-player-box">
+                <span class="audio-label">🎧 5分解説ウェビナー音声（Nicomatic編）</span>
+                <audio controls>
+                    <source src="../nico.m4a" type="audio/x-m4a">
+                    お使いのブラウザは音声再生に対応していません。
+                </audio>
+                <span class="audio-caption">「過酷な環境を生き抜く接続性：Nicomaticマイクロコネクタがもたらす軽量化と超堅牢性」</span>
+            </div>
+
+            <a href="../nico.pdf" class="btn-download">最新技術レポート (nico.pdf) を開く</a>
+        </section>
+
+        <div class="back-to-portal">
+            <a href="../index.html">← 定期配信 5分トレンドレポート一覧へ戻る</a>
+        </div>
+    </main>
+
+    <footer style="padding: 80px 0 40px; text-align: center; background: #021111; color: #fff; border-top: 1px solid rgba(212, 175, 55, 0.2); font-family: 'Noto Sans JP', sans-serif; margin-top: 5rem; border-radius: 12px 12px 0 0;">
+        <style>
+            .footer-content { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+            .footer-tagline { font-size: 1.05rem; color: #ffffff; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.05em; line-height: 1.8; }
+            .footer-info-card { margin: 0 auto 35px; padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+            .company-name { font-size: 1.3rem; font-weight: 700; color: #d4af37; margin: 0 0 15px 0; letter-spacing: 0.1em; }
+            .footer-address { font-style: normal; color: #e2e8f0; line-height: 1.8; font-size: 0.95rem; }
+            .contact-grid { display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap; }
+            .contact-grid p { margin: 0; }
+            .contact-grid strong { color: #d4af37; margin-right: 6px; }
+            .btn-contact { background: #d4af37; color: #021111; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 16px rgba(0,0,0,0.3); font-size: 1rem; }
+            .btn-contact:hover { background: #f1c40f; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4); }
+            .copyright { margin-top: 60px; font-size: 0.8rem; color: #64748b; letter-spacing: 0.1em; }
+            @media (max-width: 600px) { .contact-grid { gap: 10px; flex-direction: column; } .footer-info-card { padding: 20px 15px; } }
+        </style>
+
+        <div class="footer-content">
+            <img src="../logo.png" alt="CHRONIX" style="height: 45px; margin-bottom: 25px; filter: brightness(1.2) contrast(1.1);">
+            <p class="footer-tagline">
+                過酷な環境に屈しない高密度インターコネクト設計を<br>カスタムから量産までサポートします。
+            </p>
+            <div class="footer-info-card">
+                <p class="company-name">クロニクス株式会社</p>
+                <address class="footer-address">
+                    <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
+                    <div class="contact-grid">
+                        <p><strong>TEL</strong> 03-5322-7191</p>
+                        <p><strong>FAX</strong> 03-5322-7790</p>
+                    </div>
+                </address>
+            </div>
+            <a href="mailto:sales@chronix.co.jp" class="btn-contact">メールでお問い合わせ</a>
+            <p class="copyright">© 2026 CHRONIX</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
