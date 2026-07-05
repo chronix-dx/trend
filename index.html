@@ -6,11 +6,9 @@
     <title>PipeFlow DX | テクノロジー戦略ポータル</title>
     <style>
         :root {
-            /* 現場の重厚感を反映したカラーパレット */
-            --bg-dark: #1a2e2a; 
+            --bg-dark: #121e1b; 
             --accent-gold: #fbd38d;
             --accent-blue: #90cdf4;
-            --card-bg: rgba(255, 255, 255, 0.05);
             --text-main: #ffffff;
             --btn-bg: #c05621;
         }
@@ -26,7 +24,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -42,11 +40,6 @@
             padding: 8px 20px;
             border-radius: 4px;
             display: inline-block;
-            transition: opacity 0.2s;
-        }
-
-        .logo-home:hover {
-            opacity: 0.9;
         }
 
         .logo-home img {
@@ -55,10 +48,9 @@
             vertical-align: middle;
         }
 
-        /* ヒーローセクション */
         .hero {
             text-align: center;
-            margin: 2rem 0 4rem 0;
+            margin: 3rem 0 4rem 0;
         }
 
         .hero h1 {
@@ -74,127 +66,148 @@
             color: var(--accent-blue);
         }
 
-        /* グリッドレイアウト */
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .category-section {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1.8rem;
+        /* 📻 横長フラットスタック・レイアウトシステム */
+        .stack-layout {
             display: flex;
             flex-direction: column;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            gap: 24px;
+            margin-bottom: 4rem;
         }
 
-        .category-section:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-blue);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .category-section h2 {
-            font-size: 1.4rem;
-            color: var(--accent-blue);
-            margin-top: 0;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 0.7rem;
+        .custom-banner-card {
+            border-radius: 12px;
+            padding: 30px 40px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .category-section p {
+        .custom-banner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        /* テーマ別・色彩グラデーションパレット */
+        .card-space     { background: linear-gradient(135deg, #16263d, #1a365d); } 
+        .card-semicon   { background: linear-gradient(135deg, #231c30, #322659); } 
+        .card-vision    { background: linear-gradient(135deg, #132822, #1c3d33); } 
+        .card-connector { background: linear-gradient(135deg, #1a2332, #212e3f); } 
+        .card-archive   { background: linear-gradient(135deg, #1c2321, #253330); border-left: 4px solid var(--accent-blue); }
+        .card-special   { background: linear-gradient(135deg, #0d2324, #0f3133); } 
+
+        .card-left-info {
+            max-width: 75%;
+        }
+
+        .badge-tag {
+            font-family: 'SF Mono', Consolas, monospace;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 3px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .custom-banner-card h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.02em;
+        }
+
+        .custom-banner-card p {
             font-size: 0.95rem;
-            flex-grow: 1;
-            margin-bottom: 1.8rem;
             color: rgba(255, 255, 255, 0.85);
+            margin: 0 0 20px 0;
+            line-height: 1.7;
+            text-align: justify;
         }
 
-        /* ウェビナー音声コンポーネント */
+        /* 🎧 音声コンポーネント内包 */
         .audio-player-box {
-            background: rgba(144, 205, 244, 0.12);
-            padding: 14px;
+            background: rgba(144, 205, 244, 0.08);
+            padding: 12px 18px;
             border-radius: 6px;
-            margin-bottom: 18px;
-            border-left: 4px solid var(--accent-blue);
+            margin-bottom: 0;
+            border-left: 3px solid var(--accent-blue);
+            max-width: 650px;
         }
 
         .audio-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             color: var(--accent-blue);
             display: block;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            margin-bottom: 6px;
         }
 
         audio {
             width: 100%;
-            height: 36px;
-            filter: invert(100%) hue-rotate(180deg) brightness(1.5); /* プレイヤーをダークモードに馴染ませる */
+            height: 32px;
+            filter: invert(100%) hue-rotate(180deg) brightness(1.4);
         }
 
         .audio-caption {
-            font-size: 0.75rem;
-            opacity: 0.7;
+            font-size: 0.7rem;
+            opacity: 0.6;
             display: block;
-            margin-top: 8px;
+            margin-top: 4px;
             font-style: italic;
         }
 
-        /* ダウンロードボタン */
-        .btn-download {
-            background: var(--btn-bg);
-            color: white;
+        .btn-action {
+            background: var(--accent-gold);
+            color: #121e1b;
             text-decoration: none;
-            padding: 14px;
-            border-radius: 5px;
-            text-align: center;
+            padding: 14px 28px;
+            border-radius: 30px;
             font-weight: bold;
-            font-size: 1rem;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-size: 0.95rem;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(251, 211, 141, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .btn-download:hover {
-            background: #a0441a;
+        .btn-action:hover {
+            background: #ffffff;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
         }
 
-        .btn-download:active {
-            transform: scale(0.98);
-        }
-
-        .btn-download.locked {
-            background: #4a5568;
-            cursor: not-allowed;
-            opacity: 0.5;
-            box-shadow: none;
+        .section-divider-title {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            letter-spacing: 0.1em;
+            margin: 5rem 0 2rem 0;
+            text-transform: uppercase;
+            border-left: 3px solid var(--accent-gold);
+            padding-left: 12px;
         }
 
         footer {
-            margin-top: 5rem;
+            padding: 80px 0 40px;
             text-align: center;
-            padding: 3rem;
-            opacity: 0.5;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            background: #091210;
+            color: #fff;
+            border-top: 1px solid rgba(251, 211, 141, 0.15);
+            margin-top: 6rem;
+            border-radius: 16px 16px 0 0;
         }
 
-        /* レスポンシブ調整 */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .container { padding: 1rem; }
+        @media (max-width: 900px) {
+            .custom-banner-card { flex-direction: column; align-items: flex-start; gap: 24px; padding: 30px; }
+            .card-left-info { max-width: 100%; }
+            .btn-action { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -212,373 +225,314 @@
         <p>物理限界を突破し、製造現場のアーキテクチャを再定義する</p>
     </div>
 
-    <main class="detail-grid">
+    <main>
+        <div class="section-divider-title">Regular Report 定例配信ラインナップ</div>
         
-    <section class="category-section">
-    <h2><span>🛰️</span> 宇宙・防衛 ＆ 極限イメージング</h2>
-    <p>
-        画素数を増やすだけでは到達できない「回折限界」の壁を、補償光学（Adaptive Optics）で突破。
-        機体振動や熱による空気の揺らぎを<b>kHzオーダーでリアルタイムに打ち消し</b>、AI後処理では復元不可能な「真の結像」を実現します。
-    </p>
+        <div class="stack-layout">
+            <section class="custom-banner-card card-space">
+                <div class="card-left-info">
+                    <span class="badge-tag">SPACE & DEFENSE</span>
+                    <h2>宇宙・防衛 ＆ 極限イメージング</h2>
+                    <p>画素数を増やすだけでは到達できない「回折限界」の壁を補償光学（Adaptive Optics）で突破。機体振動や熱による空気の揺らぎをリアルタイムに打ち消し、AI補正では到達できない「真の結像」のインサイトをお届けします。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/ao2.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「補償光学が切り開く画素数の物理的限界」</span>
+                    </div>
+                </div>
+                <a href="alpao/index.html" class="btn-action">最新ページを開く <span>›</span></a>
+            </section>
 
- <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="ao2.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「補償光学が切り開く画素数の物理的限界」</span>
-    </div>
+            <section class="custom-banner-card card-semicon">
+                <div class="card-left-info">
+                    <span class="badge-tag">SEMICONDUCTOR METROLOGY</span>
+                    <h2>半導体 ＆ ナノスケール計測</h2>
+                    <p>ナノスケール検査における歩留まりの停滞リスクを「動的光学系」による収差制御で打破。ソフトウェア後処理に依存しない、入力レイヤーの品質最適化からAI判定精度を根底から引き上げる次世代標準戦略。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/2nm.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「2nmプロセスへの挑戦：動的光学系による収差制御」</span>
+                    </div>
+                </div>
+                <a href="alpao/vol2.html" class="btn-action">最新ページを開く <span>›</span></a>
+            </section>
 
-    <a href="ao2.pdf" class="btn-download">最新レポート (ao.pdf) を開く</a>
-</section>
+            <section class="custom-banner-card card-vision">
+                <div class="card-left-info">
+                    <span class="badge-tag">MACHINE VISION & AUTOMATION</span>
+                    <h2>マシンビジョン・検査装置</h2>
+                    <p>産業用PCへの依存を断ち、カメラ内部でエッジAI判定を完結させるアプローチ。リアルタイムラインの通信遅延とデータ環境リスクを物理的にゼロへと抑え込む「PCレスインライン検査」への転換ロードマップ。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/ao.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「物理限界と動的補正の必然性」</span>
+                    </div>
+                </div>
+                <a href="stmicro/index.html" class="btn-action">最新ページを開く <span>›</span></a>
+            </section>
 
+            <section class="custom-banner-card card-connector">
+                <div class="card-left-info">
+                    <span class="badge-tag">HIGH-RELIABILITY INTERCONNECT</span>
+                    <h2>コネクター・ケーブル ＆ 信号整合性</h2>
+                    <p>次世代半導体テスターや大容量超高速通信における信号整合性（SI）を物理層の設計から完璧に担保。過酷な耐振環境を想定したモジュラー構造が、インダストリーDXにおける「止まらないインフラ」を構築します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/cable.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「高信頼性インターコネクトが切り拓く極限の自動化」</span>
+                    </div>
+                </div>
+                <a href="nicomatic/index.html" class="btn-action">最新ページを開く <span>›</span></a>
+            </section>
+        </div>
+
+
+        <div class="section-divider-title">Technical Report 配信アーカイブ（過去ログ）</div>
         
-<section class="category-section">
-    <h2><span>🌈</span> 分光・波面センシング</h2>
-    <p>「見えない変化」を成分と波面から捉える。Siliosのワンショット・マルチスペクトル技術と1nm精度のQLSI波面計測により、非破壊・非接触での高度な品質解析を実現します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="silli.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「マルチスペクトル・イメージングの産業応用と波面計測の革新」</span>
-    </div>
+        <div class="stack-layout">
 
-    <a href="silli.pdf" class="btn-download">最新レポート (silli.pdf) を開く</a>
-</section>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">SPECTROSCOPY</span>
+                    <h2>分光・波面センシング (Silios Technologies)</h2>
+                    <p>「見えない変化」を成分と波面から捉える。Siliosのワンショット・マルチスペクトル技術と1nm精度のQLSI波面計測により、非破壊・非接触での高度な品質解析を実現します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/silli.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「マルチスペクトル・イメージングの産業応用と波面計測の革新」</span>
+                    </div>
+                </div>
+                <a href="silios/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
 
-<section class="category-section">
-    <h2><span>🔍</span> 産業用高精度イメージング</h2>
-    <p>「歪みのない真実」を光学の極致から描き出す。Schneider-Kreuznachの低ディストーション設計と、過酷な環境に耐える堅牢なメカニズムにより、マイクロメートル精度の外観検査や高度なロボットビジョンを支えます。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="sch.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「Schneiderレンズが実現する次世代マシンビジョンと光学性能の最適化」</span>
-    </div>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">HIGH-PRECISION OPTICS</span>
+                    <h2>産業用高精度イメージング (Schneider-Kreuznach)</h2>
+                    <p>「歪みのない真実」を光学の極致から描き出す。Schneider-Kreuznachの低ディストーション設計と、過酷な環境に耐える堅牢なメカニズムにより、マイクロメートル精度の外観検査や高度なロボットビジョンを支えます。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/sch.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「Schneiderレンズが実現する次世代マシンビジョンと光学性能の最適化」</span>
+                    </div>
+                </div>
+                <a href="schneider/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
 
-    <a href="sch.pdf" class="btn-download">製品カタログ・技術資料 (sch.pdf) を開く</a>
-</section>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">AEROSPASE CONNECTOR</span>
+                    <h2>高信頼性マイクロコネクタ・ソリューション (Nicomatic)</h2>
+                    <p>「極限への挑戦」をフランスの精密工学で支える。Nicomaticのモジュール式コネクタは、航空宇宙、防衛、医療分野の厳しい要求に応えるべく設計されています。軽量・小型化（SWaP）と、過酷な振動・熱環境に耐える堅牢性を両立します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/nico.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「モジュール設計がもたらす設計自由度と、Nicomaticのインターコネクト技術」</span>
+                    </div>
+                </div>
+                <a href="nicomatic/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
 
-        <section class="category-section">
-    <h2><span>🚀</span> 高信頼性マイクロコネクタ・ソリューション</h2>
-    <p>「極限への挑戦」をフランスの精密工学で支える。Nicomatic（ニコマティック）のモジュール式コネクタは、航空宇宙、防衛、医療分野の厳しい要求に応えるべく設計されています。軽量・小型化（SWaP）と、過酷な振動・熱環境に耐える堅牢性を両立し、数百万通りの構成から最適な接続を実現します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="nico.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「モジュール設計がもたらす設計自由度と、Nicomaticのインターコネクト技術」</span>
-    </div>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">RAD-HARD SYSTEM</span>
+                    <h2>宇宙・高放射線環境向け高信頼システム (Zero Error Systems)</h2>
+                    <p>「過酷な環境での誤作動ゼロ」を追求する。シンガポール国立大学発のZES技術は、安価な民生品（COTS）の利便性を活かしつつ、物理・論理の両面から放射線耐性を劇的に向上。人工衛星のエッジ計算システムに究極の信頼性をもたらします。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/zes.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「ZES核心技術：民生品を活用した低コスト・高耐放射線ソリューションの原理」</span>
+                    </div>
+                </div>
+                <a href="zes/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
 
-    <a href="nico.pdf" class="btn-download">製品カタログ・技術資料 (nicomatic.pdf) を開く</a>
-</section>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">NEW SPACE SEMI</span>
+                    <h2>宇宙・防衛・New Space (STMicroelectronics)</h2>
+                    <p>低軌道コンステレーションが求める「信頼性」と「量産性」の不可避な交差点。STMicroelectronicsのFD-SOI技術が、宇宙ビジネスの物理的限界を再定義します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/stm.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「New Spaceの衝撃：FD-SOIプロセスによる放射線耐性と量産性の両立」</span>
+                    </div>
+                </div>
+                <a href="stmicro/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
 
-        <section class="category-section">
-    <h2><span>🛰️</span> 宇宙・高放射線環境向け高信頼システム</h2>
-    <p>「過酷な環境での誤作動ゼロ」を追求する。シンガポール国立大学発のZES（Zero Error Systems）技術は、安価な民生品（COTS）の利便性を活かしつつ、物理・論理の両面から放射線耐性を劇的に向上。人工衛星のエッジ計算や、高エネルギー施設の制御システムに究極の信頼性をもたらします。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="zes.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「ZES核心技術：民生品を活用した低コスト・高耐放射線ソリューションの原理」</span>
-    </div>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">PIEZO MECHATRONICS</span>
+                    <h2>精密駆動・ナノポジショニング (Cedrat Technologies)</h2>
+                    <p>「極限の動き」をナノメートル精度で制御する。Cedrat Technologiesの圧電アクチュエータと高度なメカトロニクス技術により、宇宙・航空・半導体分野での過酷な環境下でも妥協のない精密制御を実現します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/cedrat.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption"> 「圧電アクチュエータによる精密駆動とスマートメカトロニクスの最前線」</span>
+                    </div>
+                </div>
+                <a href="pdf/cedrat.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
 
-    <a href="zes.pdf" class="btn-download">製品カタログ・技術資料 (zes.pdf) を開く</a>
-</section>
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">SCIENTIFIC CMOS</span>
+                    <h2>超高感度・高速イメージング (Tucsen Photonics)</h2>
+                    <p>「一瞬の光」を極限の低ノイズで描き出す。Tucsenが誇る最新のsCMOS技術により、バイオイメージングから産業用高速検査まで、従来のカメラでは捉えきれなかった微弱かつ高速な現象を可視化します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/tuc.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「次世代sCMOSカメラによる定量イメージングの最前線」</span>
+                    </div>
+                </div>
+                <a href="tucsen/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">DIGITAL IMAGING</span>
+                    <h2>デジタルイメージング・顕微鏡カメラ (ToupTek)</h2>
+                    <p>「使いやすさ」と「高性能」を両立したデジタルソリューション。ToupTekのカメララインナップは、優れた色再現性と高速転送を実現。研究から教育、産業検査まで、あらゆる光学システムに最適な画像処理環境を提供します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/toup.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「デジタル顕微鏡カメラの選定基準とソフトウェア活用法」</span>
+                    </div>
+                </div>
+                <a href="touptek/index.html" class="btn-action">解説ページへ <span>›</span></a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">PC-LESS INSPECTION</span>
+                    <h2>マシンビジョン・PCレスインラインアーキテクチャ</h2>
+                    <p>産業用PCへの依存を断ち、カメラ内部でAI判定を完結。通信遅延と環境リスクを物理的に排除する「PCレス検査」への転換戦略。</p>
+                </div>
+                <a href="pdf/code.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">HMI COMPONENTS</span>
+                    <h2>C＆K (HMI & Mechatronics ソリューション)</h2>
+                    <p>過酷な環境下でも揺るがない「確実な操作感」。物理接点の信頼性と高度な小型化技術で、次世代のインターフェース・デザインを支えるC＆Kソリューション。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/ck.m4a" type="audio/mpeg"></audio>
+                        <span class="audio-caption">「タクタイル・フィードバックの心理的価値と耐久設計」</span>
+                    </div>
+                </div>
+                <a href="pdf/ck.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">3D STACKING SEMI</span>
+                    <h2>3D PLUS：宇宙用半導体ソリューション</h2>
+                    <p>従来の平面実装の限界を超え、チップを垂直に統合。放射線ガードと演算機能を極小パッケージに封じ込め、過酷な宇宙環境での「絶対的な信頼性」を実現する積層戦略。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/3d.m4a" type="audio/mp4"></audio>
+                        <span class="audio-caption">「3次元積層技術と放射線耐性の論理的帰結」</span>
+                    </div>
+                </div>
+                <a href="pdf/3d.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">SIGNAL INTEGRITY</span>
+                    <h2>コネクター・高信頼性インターコネクトインフラ</h2>
+                    <p>次世代半導体検査や高速通信における信号整合性（SI）を物理層から担保。Nicomaticの耐振モジュラー構造や8KLinkの超高速伝送技術が、DX自動化における「止まらないインフラ」を最適化します。</p>
+                </div>
+                <a href="pdf/cable.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">RECONFIGURABLE CIRCUIT</span>
+                    <h2>FPGA・宇宙エッジアクセラレーション</h2>
+                    <p>火星探査等の極限環境において、遠隔での回路書き換えによる「進化」を実現。FPGA SiPと3D積層技術が、物理端子によるメンテナンス不能な空間での自動化を支えます。</p>
+                </div>
+                <a href="pdf/fpga.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">THERMAL MANAGEMENT</span>
+                    <h2>高出力レーザー・光学熱対策システム</h2>
+                    <p>高出力レーザーにおける「熱レンズ効果」によるビーム品質の劣化を、ALPAOの補償光学（AO）で解決。リアルタイムな波面制御により、極限環境下での安定した自動稼働を実現します。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
+                        <audio controls><source src="audio/netsu.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「高出力レーザーの熱問題解決とALPAO補償光学の役割」</span>
+                    </div>
+                </div>
+                <a href="pdf/netsu.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">ULTRA HDR SENSOR</span>
+                    <h2>Pyxalis：光の物理限界を突破する撮像革命</h2>
+                    <p>120dBの壁を超える超広ダイナミックレンジと、CDS（相関二重サンプリング）による極低ノイズ技術。1フレームで100万倍の階調を捉える、物理レイヤーからのアプローチ。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声 (Pyxalis Edition)</span>
+                        <audio controls><source src="audio/pyx.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「120dB HDRとDual CVF：なぜソフトウェア合成では不十分なのか」</span>
+                    </div>
+                </div>
+                <a href="pdf/pyx.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+
+            <section class="custom-banner-card card-archive">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color:var(--accent-blue); border-color:var(--accent-blue);">DATA CENTER INFRA</span>
+                    <h2>データセンター熱管理の再定義ソリューション</h2>
+                    <p>AIの高密度演算が引き起こす「局所熱」は、もはや従来の点計測では捕捉不可能です。ボロメーターによる熱の面分布可視化と、Calumino等のプライバシー配慮型センサーによる、次世代の物理層監視プラットフォーム。</p>
+                    <div class="audio-player-box">
+                        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
+                        <audio controls><source src="audio/dc-heat.m4a" type="audio/x-m4a"></audio>
+                        <span class="audio-caption">「データセンター熱監視の盲点と、赤外線センシングによる予兆検知」</span>
+                    </div>
+                </div>
+                <a href="pdf/dc-report-v2.pdf" class="btn-action">レポート(PDF)を開く</a>
+            </section>
+        </div>
+
+
+        <div class="section-divider-title">Technical Commentary 特設コーナー</div>
         
-        <section class="category-section">
-    <h2><span>🚀</span> 宇宙・防衛・New Space</h2>
-    <p>低軌道コンステレーションが求める「信頼性」と「量産性」の不可避な交差点。STMicroelectronicsのFD-SOI技術が、宇宙ビジネスの物理的限界を再定義します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="stm.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「New Spaceの衝撃：FD-SOIプロセスによる放射線耐性と量産性の両立」</span>
-    </div>
-
-    <a href="stm.pdf" class="btn-download">最新レポート (stm.pdf) を開く</a>
-</section>
-
-        <section class="category-section">
-    <h2><span>⚡</span> 精密駆動・ナノポジショニング</h2>
-    <p>「極限の動き」をナノメートル精度で制御する。Cedrat Technologiesの圧電アクチュエータと高度なメカトロニクス技術により、宇宙・航空・半導体分野での過酷な環境下でも妥協のない精密制御を実現します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="cedrat.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「圧電アクチュエータによる精密駆動とスマートメカトロニクスの最前線」</span>
-    </div>
-
-    <a href="cedrat.pdf" class="btn-download">最新レポート (cedrat.pdf) を開く</a>
-</section>
-
-<section class="category-section">
-    <h2><span>🔬</span> 超高感度・高速イメージング</h2>
-    <p>「一瞬の光」を極限の低ノイズで描き出す。Tucsenが誇る最新のsCMOS技術により、バイオイメージングから産業用高速検査まで、従来のカメラでは捉えきれなかった微弱かつ高速な現象を可視化します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="tuc.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「次世代sCMOSカメラによる定量イメージングの最前線」</span>
-    </div>
-
-    <a href="tuc.pdf" class="btn-download">最新レポート (tuc.pdf) を開く</a>
-</section>
-
-
-
-<section class="category-section">
-    <h2><span>📸</span> デジタルイメージング・顕微鏡カメラ</h2>
-    <p>「使いやすさ」と「高性能」を両立したデジタルソリューション。ToupTekのカメララインナップは、優れた色再現性と高速転送を実現。研究から教育、産業検査まで、あらゆる光学システムに最適な画像処理環境を提供します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="toup.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「デジタル顕微鏡カメラの選定基準とソフトウェア活用法」</span>
-    </div>
-
-    <a href="toup.pdf" class="btn-download">最新レポート (toup.pdf) を開く</a>
-</section>
-        
-        <section class="category-section">
-    <h2><span>🔬</span> 半導体</h2>
-    <p>ナノスケール検査における歩留まりの停滞を「動的光学系」で打破。物理層での収差制御により、AI判定の精度を根底から引き上げます。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="2nm.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「2nmプロセスへの挑戦：動的光学系による収差制御」 講師：中島 漢</span>
-    </div>
-
-    <a href="ao2.pdf" class="btn-download">最新レポート (ao2.pdf) を開く</a>
-</section>
-
-        
-
-        <section class="category-section">
-            <h2><span>👁️</span> マシンビジョン</h2>
-            <p>産業用PCへの依存を断ち、カメラ内部でAI判定を完結。通信遅延と環境リスクを物理的に排除する「PCレス検査」への転換戦略。</p>
-            
-            <div class="audio-player-box">
-                <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-                <audio controls>
-                    <source src="ao.m4a" type="audio/x-m4a">
-                    お使いのブラウザは音声再生に対応していません。
-                </audio>
-                <span class="audio-caption">「物理限界と動的補正の必然性」 </span>
-            </div>
-
-            <a href="code.pdf" class="btn-download">最新レポート (code.pdf) を開く</a>
-        </section>
-
-
-        <section class="category-section">
-            <h2><span>🖐️</span> C＆K (HMI & Mechatronics)</h2>
-            <p>過酷な環境下でも揺るがない「確実な操作感」。物理接点の信頼性と高度な小型化技術で、次世代のインターフェース・デザインを支えるC＆Kソリューション。</p>
-            
-            <div class="audio-player-box">
-                <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-                <audio controls>
-                    <source src="ck.m4a" type="audio/mpeg">
-                    お使いのブラウザは音声再生に対応していません。
-                </audio>
-                <span class="audio-caption">「タクタイル・フィードバックの心理的価値と耐久設計」 </span>
-            </div>
-
-            <a href="ck.pdf" class="btn-download">最新レポート (ck.pdf) を開く</a>
-        </section>
-
-<section class="category-section">
-    <h2><span>🚀</span> 3D PLUS：宇宙用半導体ソリューション</h2>
-    <p>従来の平面実装の限界を超え、チップを垂直に統合。放射線ガードと演算機能を極小パッケージに封じ込め、過酷な宇宙環境での「絶対的な信頼性」を実現する積層戦略。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="3d.m4a" type="audio/mp4">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「3次元積層技術と放射線耐性の論理的帰結」</span>
-    </div>
-
-    <a href="3d.pdf" class="btn-download">最新レポート (3d.pdf) を開く</a>
-</section>
-        
-    <section class="category-section">
-    <h2><span>🔌</span> コネクター・高信頼性インターコネクト</h2>
-    <p>
-        次世代半導体検査や高速通信における信号整合性（SI）を物理層から担保。
-        Nicomaticの耐振モジュラー構造や8KLinkの超高速伝送技術が、DX自動化における「止まらないインフラ」を最適化します。
-    </p>
-
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="cable.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「高信頼性インターコネクトが切り拓く極限の自動化」</span>
-    </div>
-
-    <a href="cable.pdf" class="btn-download">最新レポート (cable.pdf) を開く</a>
-</section>
-
-<section class="category-section">
-    <h2><span>🚀</span> FPGA・宇宙エッジ</h2>
-    <p>火星探査等の極限環境において、遠隔での回路書き換えによる「進化」を実現。FPGA SiPと3D積層技術が、物理的メンテナンス不能な空間での自動化を支えます。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="fpga.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「FPGA SiPが切り拓く極限の自動化」 </span>
-    </div>
-
-    <a href="fpga.pdf" class="btn-download">最新レポート (fpga.pdf) を開く</a>
-</section>
-
-
-        <section class="category-section">
-    <h2><span>🔥</span> 高出力レーザー・熱対策</h2>
-    <p>高出力レーザーにおける「熱レンズ効果」によるビーム品質の劣化を、ALPAOの補償光学（AO）で解決。リアルタイムな波面制御により、極限環境下での安定した自動稼働を実現します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 5分解説ウェビナー音声</span>
-        <audio controls>
-            <source src="netsu.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「高出力レーザーの熱問題解決とALPAO補償光学の役割」</span>
-    </div>
-
-    <a href="netsu.pdf" class="btn-download">最新レポート (netsu.pdf) を開く</a>
-</section>
-
-        <section class="category-section" style="border-left: 6px solid #f39c12; background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px;">
-    <h2 style="color: #1a252f; display: flex; align-items: center; margin-top: 0;">
-        <span style="margin-right: 12px;">🛰️</span> Pyxalis：光の物理限界を突破する
-    </h2>
-    <p style="color: #475569; line-height: 1.7;">
-        120dBの壁を超える超広ダイナミックレンジと、CDS（相関二重サンプリング）による極低ノイズ技術。1フレームで100万倍の階調を捉える、物理レイヤーからの撮像革命。
-    </p>
-    
-    <div class="audio-player-box" style="background: #fdfaf5; border: 1px solid #f9e79f; padding: 20px; border-radius: 10px; margin: 25px 0;">
-        <span class="audio-label" style="display: block; font-weight: 800; color: #ea580c; font-size: 13px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em;">
-            🎧 技術解説ウェビナー音声 (Pyxalis Edition)
-        </span>
-        <audio controls style="width: 100%;">
-            <source src="pyx.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption" style="display: block; margin-top: 10px; font-size: 12px; color: #64748b; font-style: italic;">
-            「120dB HDRとDual CVF：なぜソフトウェア合成では不十分なのか」
-        </span>
-    </div>
-
-    <a href="pyx.pdf" class="btn-download" style="display: inline-block; background: linear-gradient(135deg, #1a252f, #2c3e50); color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; text-align: center;"
-       onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)';"
-       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-        Pyxalis 技術レポート (pyx.pdf) を開く
-    </a>
-</section>
-
-        <section class="category-section">
-    <h2><span>🌡️</span> データセンター熱管理の再定義</h2>
-    <p>AIの高密度演算が引き起こす「局所熱」は、もはや従来の点計測では捕捉不可能です。ボロメーターによる熱の面分布可視化と、Calumino等のプライバシー配慮型センサーによる、次世代の物理層監視プラットフォームを解説します。</p>
-    
-    <div class="audio-player-box">
-        <span class="audio-label">🎧 技術解説ウェビナー音声</span>
-        <audio controls>
-            <source src="dc-heat.m4a" type="audio/x-m4a">
-            お使いのブラウザは音声再生に対応していません。
-        </audio>
-        <span class="audio-caption">「データセンター熱監視の盲点と、赤外線センシングによる予兆検知」</span>
-    </div>
-
-    <a href="dc-report-v2.pdf" class="btn-download">最新技術レポート (dc-report-v2.pdf) を開く</a>
-</section>
-        
-
+        <div class="stack-layout">
+            <section class="custom-banner-card card-special">
+                <div class="card-left-info">
+                    <span class="badge-tag" style="color: #63b3ed; border-color: #63b3ed;">TECHNICAL COMMENTARY 🚀</span>
+                    <h2>教えてプロの人！熱を測るカメラ（サーモグラフィ）の秘密</h2>
+                    <p>「カメラが自分の熱で混乱しない理由は？」 私たちの暮らしや工場、データセンターを守る非冷却赤外線センサーの裏側を、中学生向けに分かりやすく解説する特設サイトを開設しました。</p>
+                </div>
+                <a href="https://chronix-dx.github.io/home/" class="btn-action" style="background: #e53e3e; color: #fff; box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);">特設サイトで読む <span>›</span></a>
+            </section>
+        </div>
     </main>
-<footer style="padding: 100px 0 60px; text-align: center; background: #021111; color: #fff; border-top: 1px solid rgba(212, 175, 55, 0.2); font-family: 'Noto Sans JP', sans-serif;">
-    <style>
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .footer-tagline {
-            font-size: 1.15rem;
-            color: #ffffff;
-            font-weight: 300;
-            margin-bottom: 45px;
-            letter-spacing: 0.05em;
-            line-height: 1.8;
-        }
-        .footer-info-card {
-            margin: 0 auto 45px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 850px;
-            backdrop-filter: blur(10px);
-        }
-        .company-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #d4af37; /* ゴールドアクセント */
-            margin: 0 0 20px 0;
-            letter-spacing: 0.1em;
-        }
-        .footer-address {
-            font-style: normal;
-            color: #e2e8f0;
-            line-height: 2;
-            font-size: 1rem;
-        }
-        .contact-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .contact-grid p { margin: 0; }
-        .contact-grid strong {
-            color: #d4af37;
-            margin-right: 8px;
-            font-family: 'Urbanist', sans-serif;
-        }
-        .btn-contact {
-            background: #d4af37;
-            color: #021111;
+
+    <footer>
+        <div class="footer-content">
+            <img src="logo.png" alt="CHRONIX" style="height: 45px; margin-bottom: 25px; filter: brightness(1.2) contrast(1.1);">
+            <p style="font-size: 1.15rem; font-weight: 300; margin-bottom: 45px; letter-spacing: 0.05em;">
+                センサーのポテンシャルを100%引き出す精密光学系・物理レイヤーの統合設計パートナー
+            </p>
+            <div style="margin: 0 auto 45px; padding: 40px; background: rgba(255, 255, 255, 0.02); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); max-width: 850px; backdrop-filter: blur(10px);">
+                <p style="font-size: 1.4rem; font-weight: 700; color: #d4af37; margin: 0 0 20px 0; letter-spacing: 0.1em;">クロニクス株式会社</p>
+                <address style="font-style: normal; color: #e2e8f0; line-height: 2; font-size: 1rem;">
+                    <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
+                    <p style="margin-top: 10px;"><strong>TEL:</strong> 03-5322-7191 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>FAX:</strong> 03-5322-7790</p>
+                </address>
+            </div>
+            <p style="margin-top: 60px; font-size: 0.8rem; color: #4a5568; letter-spacing: 0.1em;">© 2026 CHRONIX</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
