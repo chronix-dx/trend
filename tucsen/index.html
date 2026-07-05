@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tucsen 科学用高感度sCMOSカメラソリューション | PipeFlow DX</title>
+    <style>
+        :root {
+            --bg-dark: #1a2e2a; 
+            --accent-gold: #fbd38d;
+            --accent-blue: #90cdf4;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-main: #ffffff;
+            --btn-bg: #c05621;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px; 
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-start;
+            padding: 1rem 0;
+        }
+
+        .logo-home {
+            background: #ffffff;
+            padding: 8px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            transition: opacity 0.2s;
+        }
+
+        .logo-home:hover {
+            opacity: 0.9;
+        }
+
+        .logo-home img {
+            height: 35px;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--accent-blue);
+        }
+
+        .focused-section {
+            background: var(--card-bg);
+            border: 1px solid rgba(144, 205, 244, 0.25);
+            border-radius: 12px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 3rem;
+        }
+
+        .focused-section h2 {
+            font-size: 1.6rem;
+            color: var(--accent-blue);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .focused-section p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: justify;
+        }
+
+        .audio-player-box {
+            background: rgba(144, 205, 244, 0.12);
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .audio-label {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+            display: block;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+        }
+
+        .audio-caption {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .btn-download {
+            background: var(--btn-bg);
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .btn-download:hover {
+            background: #a0441a;
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        .back-to-portal {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .back-to-portal a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .back-to-portal a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="https://chronix-dx.github.io/home/" class="logo-home">
+            <img src="../logo.png" alt="CHRONIX">
+        </a>
+    </header>
+
+    <div class="hero">
+        <h1>技術トレンド個別解説</h1>
+        <p>ノイズの海を克服し、光の最小単位をありのままに可視化する</p>
+    </div>
+
+    <main>
+        <section class="focused-section">
+            <h2><span>📷</span> TUCSEN：科学用高感度 BSI sCMOSカメラソリューション</h2>
+            
+            <p style="line-height: 1.8; color: rgba(255, 255, 255, 0.9); text-align: justify;">
+                <b>■ 今夜のメインテーマ：暗闇というノイズの海から「たった一つの光」を掬い上げる</b><br>
+                最先端の科学研究や、半導体のウエハ検査、バイオサイエンスの現場において、僕たちが対峙するのは「ほとんど光のない世界」です。ほんの数個の光子（フォトン）しか届かない極限の暗闇の中で、その微弱な光の中に含まれる決定的な変化を捉えなければならない。しかし、一般的なイメージセンサーでは、カメラ自体が発する電気的な雑音（読み出しノイズや暗電流ノイズ）の海に対象物が完全に埋もれてしまい、画面はただの砂嵐になってしまいます。暗闇を克服し、光の最小単位をありのままに描き出す「極限イメージング」の結晶、sCMOSテクノロジーの世界へ潜り込みます。<br><br>
+
+                <b>■ なぜ、これまでの高感度カメラ（EMCCD）では現代の超解像計測に対応できないのか</b><br>
+                これまで、微弱光計測の絶対王者として君臨していたのは「EMCCD」と呼ばれる特殊なセンサーでした。電子を強力に増幅させることで圧倒的な高感度を実現していましたが、構造上、画素数を増やすことが難しく（低解像度）、さらに増幅処理に伴う追加のノイズ（余剰ノイズ）が発生するという致命的な弱点がありました。また、フレームレートを上げると感度が落ちるため、生きた細胞の高速な動きや、高速ライン上の超微細な欠陥を「高解像度かつリアルタイムに」捉えることは、光学的なトレードオフの壁に阻まれて不可能だったのです。<br><br>
+
+                <b>■ Tucsen Photonics社が到達した、sCMOS（科学用CMOS）の技術的極致</b><br>
+                この物理層の限界を鮮やかに打ち破ったのが、Tucsen Photonics（トゥクセン・フォトニクス）社が展開する科学用高感度sCMOSカメラです。彼らは裏面照射型（BSI）と呼ばれる高度なセンサー構造と独自の低ノイズ回路設計を融合させ、届いた光をほぼ100%電気信号に変換する驚異的な量子効率（QE）を達成しました。さらに、EMCCDのような無骨な電子増幅に頼ることなく、読み出しノイズを物理的に「1電子未満」のレベルまで抑制。これにより、圧倒的な高解像度、超高フレームレート、そして暗い部分から明るい部分までを一度に破綻なく捉える広大なダイナミックレンジを同時に手に入れることに成功しました。<br><br>
+
+                <b>■ 物理層の透明度を高めることが、解析データの純度を決定付ける</b><br>
+                単分子蛍光顕微鏡での観察、天文学における星食のシミュレーション、インラインでの発光外観検査。カメラが歪みのない「生の光の姿」をそのまま捉えることができれば、その後に続くAI解析や画質補正の負担は劇的に減少し、データの純度は飛躍的に高まります。センサーの電子ノイズというアキレス腱を克服し、これまで見えなかった真実を可視化すること。これこそが、最先端のサイエンスとインダストリー検査を次のステージへと押し上げる、最も強固な技術基盤となるでしょう。
+            </p>
+
+            <div class="audio-player-box">
+                <span class="audio-label">🎧 5分解説ウェビナー音声（Tucsen編）</span>
+                <audio controls>
+                    <source src="../tuc.m4a" type="audio/x-m4a">
+                    お使いのブラウザは音声再生に対応していません。
+                </audio>
+                <span class="audio-caption">「暗闇に潜む真実を捉えろ：Tucsen sCMOSカメラが切り拓く低ノイズ・極限超高感度イメージングの到達点」</span>
+            </div>
+
+            <a href="../tuc.pdf" class="btn-download">最新技術レポート (tuc.pdf) を開く</a>
+        </section>
+
+        <div class="back-to-portal">
+            <a href="../index.html">← 定期配信 5分トレンドレポート一覧へ戻る</a>
+        </div>
+    </main>
+
+    <footer style="padding: 80px 0 40px; text-align: center; background: #021111; color: #fff; border-top: 1px solid rgba(212, 175, 55, 0.2); font-family: 'Noto Sans JP', sans-serif; margin-top: 5rem; border-radius: 12px 12px 0 0;">
+        <style>
+            .footer-content { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+            .footer-tagline { font-size: 1.05rem; color: #ffffff; font-weight: 300; margin-bottom: 35px; letter-spacing: 0.05em; line-height: 1.8; }
+            .footer-info-card { margin: 0 auto 35px; padding: 30px; background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+            .company-name { font-size: 1.3rem; font-weight: 700; color: #d4af37; margin: 0 0 15px 0; letter-spacing: 0.1em; }
+            .footer-address { font-style: normal; color: #e2e8f0; line-height: 1.8; font-size: 0.95rem; }
+            .contact-grid { display: flex; justify-content: center; gap: 30px; margin-top: 15px; flex-wrap: wrap; }
+            .contact-grid p { margin: 0; }
+            .contact-grid strong { color: #d4af37; margin-right: 6px; }
+            .btn-contact { background: #d4af37; color: #021111; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 16px rgba(0,0,0,0.3); font-size: 1rem; }
+            .btn-contact:hover { background: #f1c40f; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4); }
+            .copyright { margin-top: 60px; font-size: 0.8rem; color: #64748b; letter-spacing: 0.1em; }
+            @media (max-width: 600px) { .contact-grid { gap: 10px; flex-direction: column; } .footer-info-card { padding: 20px 15px; } }
+        </style>
+
+        <div class="footer-content">
+            <img src="../logo.png" alt="CHRONIX" style="height: 45px; margin-bottom: 25px; filter: brightness(1.2) contrast(1.1);">
+            <p class="footer-tagline">
+                極限の暗闇から確実なシグナルを掴み取る<br>次世代サイエンティフィックイメージングの統合設計をサポートします。
+            </p>
+            <div class="footer-info-card">
+                <p class="company-name">クロニクス株式会社</p>
+                <address class="footer-address">
+                    <p>〒160-0023 東京都新宿区西新宿3-2-11 新宿三井ビルディング二号館 904室</p>
+                    <div class="contact-grid">
+                        <p><strong>TEL</strong> 03-5322-7191</p>
+                        <p><strong>FAX</strong> 03-5322-7790</p>
+                    </div>
+                </address>
+            </div>
+            <a href="mailto:sales@chronix.co.jp" class="btn-contact">メールでお問い合わせ</a>
+            <p class="copyright">© 2026 CHRONIX</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
