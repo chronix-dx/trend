@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 800px; /* 個別テーマ用に読みやすい1カラム幅に最適化 */
+            max-width: 800px; /* 読みやすい1カラム幅に最適化 */
             margin: 0 auto;
             padding: 2rem;
         }
@@ -74,10 +74,10 @@
             color: var(--accent-blue);
         }
 
-        /* 個別専用フル幅セクション（グリッドは排除） */
+        /* 個別専用フル幅セクション */
         .focused-section {
             background: var(--card-bg);
-            border: 1px solid rgba(144, 205, 244, 0.25); /* 注目パーツとして枠線を少し強調 */
+            border: 1px solid rgba(144, 205, 244, 0.25);
             border-radius: 12px;
             padding: 2.5rem;
             display: flex;
@@ -161,7 +161,7 @@
             transform: scale(0.98);
         }
 
-        /* 戻る動線（親ページへのスムーズなナビゲーション） */
+        /* 戻る動線 */
         .back-to-portal {
             text-align: center;
             margin-top: 1rem;
@@ -185,7 +185,7 @@
 <div class="container">
     <header>
         <a href="https://chronix-dx.github.io/home/" class="logo-home">
-            <img src="../files/logo.png" alt="CHRONIX">
+            <img src="../logo.png" alt="CHRONIX">
         </a>
     </header>
 
@@ -198,19 +198,19 @@
         <section class="focused-section">
             <h2><span>🛰️</span> ALPAO：補償光学 ＆ 極限イメージング</h2>
             <p>
-                微細化技術がナノスケールに達した今、従来の「静的光学系」は回折限界という物理的ボトルネックに直面しています。CMOSセンサーの画素微細化が限界を迎える中、解像度のさらなる向上は、いかにクリアな光をセンサーへ届けるかという光学系の質に依存します。現実の環境下で光の波面を乱す空気のゆらぎ、熱膨張、微小な機械振動を、フランスALPAO社のデフォーマブルミラー（可変形状鏡）を用いた「補償光学（Adaptive Optics）」で<b>kHzオーダーでリアルタイムに打ち消し</b>ます。ソフトウェアによる後補正（AI）では物理的に喪失した情報を完全に復元することは不可能であり、入力段階での動的波面制御こそが、検査工程の自動化率向上と歩留まり停滞リスクを排除する次世代の標準戦略です。
+                微細化技術がナノスケールに達した今、従来の「静的光学系」は回折限界という物理的ボトルネックに直面しています [cite: 4]。CMOSセンサーの画素微細化が限界を迎える中、解像度のさらなる向上は、いかにクリアな光をセンサーへ届けるかという光学系の質に依存します [cite: 8]。現実の環境下で光の波面を乱す空気のゆらぎ、熱膨張、微小な機械振動を、フランスALPAO社のデフォーマブルミラー（可変形状鏡）を用いた「補償光学（Adaptive Optics）」で<b>kHzオーダーでリアルタイムに打ち消し</b>ます [cite: 6, 9, 13]。ソフトウェアによる後補正（AI）では物理的に喪失した情報を完全に復元することは不可能であり [cite: 11]、入力段階での動的波面制御こそが、検査工程の自動化率向上と歩留まり停滞リスクを排除する次世代の標準戦略です [cite: 5, 11, 16]。
             </p>
 
             <div class="audio-player-box">
                 <span class="audio-label">🎧 5分解説ウェビナー音声（Alpao編）</span>
                 <audio controls>
-                    <source src="../files/ao2.m4a" type="audio/x-m4a">
+                    <source src="../ao2.m4a" type="audio/x-m4a">
                     お使いのブラウザは音声再生に対応していません。
                 </audio>
-                <span class="audio-caption">「微細化の物理限界を突破せよ：補償光学が書き換える『光計測』の未来」 講師：中島 漢</span>
+                <span class="audio-caption">「微細化の物理限界を突破せよ：補償光学が書き換える『光計測』の未来」 [cite: 2, 3] 講師：中島 漢 [cite: 24]</span>
             </div>
 
-            <a href="../files/ao2.pdf" class="btn-download">最新技術レポート (ao2.pdf) を開く</a>
+            <a href="../ao2.pdf" class="btn-download">最新技術レポート (ao2.pdf) を開く</a>
         </section>
 
         <div class="back-to-portal">
@@ -296,7 +296,7 @@
         </style>
 
         <div class="footer-content">
-            <img src="../files/logo.png" alt="CHRONIX" style="height: 45px; margin-bottom: 25px; filter: brightness(1.2) contrast(1.1);">
+            <img src="../logo.png" alt="CHRONIX" style="height: 45px; margin-bottom: 25px; filter: brightness(1.2) contrast(1.1);">
             
             <p class="footer-tagline">
                 センサーのポテンシャルを100%引き出す<br>精密光学系との統合設計をサポートします。
