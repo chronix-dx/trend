@@ -217,12 +217,6 @@
             transform: scale(1.1);
         }
 
-        .audio-caption {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            opacity: 0.8;
-        }
-
         /* アクションボタン */
         .btn-action {
             background: var(--accent-gold);
@@ -315,9 +309,10 @@
                     <h2>宇宙・防衛 ＆ 極限イメージング</h2>
                     <p>画素数を増やすだけでは到達できない「回折限界」の壁を補償光学（Adaptive Optics）で突破。機体振動や熱による空気の揺らぎをリアルタイムに打ち消し、AI補正では到達できない「真の結像」のインサイトをお届けします。</p>
                     <div class="meta-footer">
-                        <div id="btn-ao2" class="audio-btn" onclick="toggleAudio('audio/ao2.m4a', 'btn-ao2')">
+                        <div id="btn-ao2" class="audio-btn" onclick="playM4A('btn-ao2')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「補償光学が切り開く画素数の物理的限界」</span>
+                            <audio src="audio/ao2.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -330,9 +325,10 @@
                     <h2>半導体 ＆ ナノスケール計測</h2>
                     <p>ナノスケール検査における歩留まりの停滞リスクを「動的光学系」による収差制御で打破。ソフトウェア後処理に依存しない、入力レイヤーの品質最適化からAI判定精度を根底から引き上げる次世代標準戦略。</p>
                     <div class="meta-footer">
-                        <div id="btn-2nm" class="audio-btn" onclick="toggleAudio('audio/2nm.m4a', 'btn-2nm')">
+                        <div id="btn-2nm" class="audio-btn" onclick="playM4A('btn-2nm')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「2nmプロセスへの挑戦：動的光学系による収差制御」</span>
+                            <audio src="audio/2nm.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -345,9 +341,10 @@
                     <h2>マシンビジョン・検査装置</h2>
                     <p>産業用PCへの依存を断ち、カメラ内部でエッジAI判定を完結させるアプローチ。リアルタイムラインの通信遅延とデータ環境リスクを物理的にゼロへと抑え込む「PCレスインライン検査」への転換ロードマップ。</p>
                     <div class="meta-footer">
-                        <div id="btn-ao" class="audio-btn" onclick="toggleAudio('audio/ao.m4a', 'btn-ao')">
+                        <div id="btn-ao" class="audio-btn" onclick="playM4A('btn-ao')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「物理限界と動的補正の必然性」</span>
+                            <audio src="audio/ao.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -360,9 +357,10 @@
                     <h2>コネクター・ケーブル ＆ 信号整合性</h2>
                     <p>次世代半導体テスターや大容量超高速通信における信号整合性（SI）を物理層の設計から完璧に担保。過酷な耐振環境を想定したモジュラー構造が、インダストリーDXにおける「止まらないインフラ」を構築します。</p>
                     <div class="meta-footer">
-                        <div id="btn-cable" class="audio-btn" onclick="toggleAudio('audio/cable.m4a', 'btn-cable')">
+                        <div id="btn-cable" class="audio-btn" onclick="playM4A('btn-cable')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「高信頼性インターコネクトが切り拓く極限の自動化」</span>
+                            <audio src="audio/cable.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -380,9 +378,10 @@
                     <h2>分光・波面センシング (Silios Technologies)</h2>
                     <p>「見えない変化」を成分と波面から捉える。Siliosのワンショット・マルチスペクトル技術と1nm精度のQLSI波面計測により、非破壊・非接触での高度な品質解析を実現します。</p>
                     <div class="meta-footer">
-                        <div id="btn-silli" class="audio-btn" onclick="toggleAudio('audio/silli.m4a', 'btn-silli')">
+                        <div id="btn-silli" class="audio-btn" onclick="playM4A('btn-silli')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「マルチスペクトル・イメージングの産業応用と波面計測の革新」</span>
+                            <audio src="audio/silli.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -393,11 +392,12 @@
                 <div class="card-left-info">
                     <span class="badge-tag" style="color:var(--accent-blue); border-color:rgba(99,179,237,0.3); background:rgba(99,179,237,0.05);">HIGH-PRECISION OPTICS</span>
                     <h2>産業用高精度イメージング (Schneider-Kreuznach)</h2>
-                    <p>「歪みのない真実」を光学の極致から描き出す。Schneider-Kreuznachの低ディストーション設計と、過酷な環境に耐える堅牢なメカニズムにより、マイクロメートル精度の外観検査や高度なロボットビジョンを支えます。</p>
+                    <p>「歪みのない真真」を光学の極致から描き出す。Schneider-Kreuznachの低ディストーション設計と、過酷な環境に耐える堅牢なメカニズムにより、マイクロメートル精度の外観検査や高度なロボットビジョンを支えます。</p>
                     <div class="meta-footer">
-                        <div id="btn-sch" class="audio-btn" onclick="toggleAudio('audio/sch.m4a', 'btn-sch')">
+                        <div id="btn-sch" class="audio-btn" onclick="playM4A('btn-sch')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「Schneiderレンズが実現する次世代マシンビジョンと光学性能の最適化」</span>
+                            <audio src="audio/sch.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -410,9 +410,10 @@
                     <h2>高信頼性マイクロコネクタ・ソリューション (Nicomatic)</h2>
                     <p>「極限への挑戦」をフランスの精密工学で支える。Nicomaticのモジュール式コネクタは、航空宇宙、防衛、医療分野の厳しい要求に応えるべく設計されています。軽量・小型化（SWaP）と、過酷な振動・熱環境に耐える堅牢性を両立します。</p>
                     <div class="meta-footer">
-                        <div id="btn-nico" class="audio-btn" onclick="toggleAudio('audio/nico.m4a', 'btn-nico')">
+                        <div id="btn-nico" class="audio-btn" onclick="playM4A('btn-nico')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「モジュール設計がもたらす設計自由度と、Nicomaticのインターコネクト技術」</span>
+                            <audio src="audio/nico.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -425,9 +426,10 @@
                     <h2>宇宙・高放射線環境向け高信頼システム (Zero Error Systems)</h2>
                     <p>「過酷な環境での誤作動ゼロ」を追求する。シンガポール国立大学発のZES技術は、安価な民生品（COTS）の利便性を活かしつつ、物理・論理の両面から放射線耐性を劇的に向上。人工衛星のエッジ計算システムに究極の信頼性をもたらします。</p>
                     <div class="meta-footer">
-                        <div id="btn-zes" class="audio-btn" onclick="toggleAudio('audio/zes.mp3', 'btn-zes')">
+                        <div id="btn-zes" class="audio-btn" onclick="playM4A('btn-zes')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「ZES核心技術：民生品を活用した低コスト・高耐放射線ソリューションの原理」</span>
+                            <audio src="audio/zes.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -440,9 +442,10 @@
                     <h2>宇宙・防衛・New Space (STMicroelectronics)</h2>
                     <p>低軌道コンステレーションが求める「信頼性」と「量産性」の不可避な交差点。STMicroelectronicsのFD-SOI技術が、宇宙ビジネスの物理的限界を再定義します。</p>
                     <div class="meta-footer">
-                        <div id="btn-stm" class="audio-btn" onclick="toggleAudio('audio/stm.m4a', 'btn-stm')">
+                        <div id="btn-stm" class="audio-btn" onclick="playM4A('btn-stm')">
                             <span class="audio-icon">▶️</span>
-                            <span><strong>LISTEN:</strong> 「New Space의 衝撃：FD-SOIプロセスによる放射線耐性と量産性の両立」</span>
+                            <span><strong>LISTEN:</strong> 「New Spaceの衝撃：FD-SOIプロセスによる放射線耐性と量産性の両立」</span>
+                            <audio src="audio/stm.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -455,9 +458,10 @@
                     <h2>精密駆動・ナノポジショニング (Cedrat Technologies)</h2>
                     <p>「極限の動き」をナノメートル精度で制御する。Cedrat Technologiesの圧電アクチュエータと高度なメカトロニクス技術により、宇宙・航空・半導体分野での過酷な環境下でも妥協のない精密制御を実現します。</p>
                     <div class="meta-footer">
-                        <div id="btn-cedrat" class="audio-btn" onclick="toggleAudio('audio/cedrat.m4a', 'btn-cedrat')">
+                        <div id="btn-cedrat" class="audio-btn" onclick="playM4A('btn-cedrat')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「圧電アクチュエータによる精密駆動とスマートメカトロニクスの最前線」</span>
+                            <audio src="audio/cedrat.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -470,9 +474,10 @@
                     <h2>超高感度・高速イメージング (Tucsen Photonics)</h2>
                     <p>「一瞬の光」を極限の低ノイズで描き出す。Tucsenが誇る最新のsCMOS技術により、バイオイメージングから産業用高速検査まで、従来のカメラでは捉えきれなかった微弱かつ高速な現象を可視化します。</p>
                     <div class="meta-footer">
-                        <div id="btn-tuc" class="audio-btn" onclick="toggleAudio('audio/tuc.m4a', 'btn-tuc')">
+                        <div id="btn-tuc" class="audio-btn" onclick="playM4A('btn-tuc')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「次世代sCMOSカメラによる定量イメージングの最前線」</span>
+                            <audio src="audio/tuc.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -485,9 +490,10 @@
                     <h2>デジタルイメージング・顕微鏡カメラ (ToupTek)</h2>
                     <p>「使いやすさ」と「高性能」を両立したデジタルソリューション。ToupTekのカメララインナップは、優れた色再現性と高速転送を実現。研究から教育、産業検査まで、あらゆる光学システムに最適な画像処理環境を提供します。</p>
                     <div class="meta-footer">
-                        <div id="btn-toup" class="audio-btn" onclick="toggleAudio('audio/toup.m4a', 'btn-toup')">
+                        <div id="btn-toup" class="audio-btn" onclick="playM4A('btn-toup')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「デジタル顕微鏡カメラの選定基準とソフトウェア活用法」</span>
+                            <audio src="audio/toup.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -509,9 +515,10 @@
                     <h2>C＆K (HMI & Mechatronics ソリューション)</h2>
                     <p>過酷な環境下でも揺るがない「確実な操作感」。物理接点の信頼性と高度な小型化技術で、次世代のインターフェース・デザインを支えるC＆Kソリューション。</p>
                     <div class="meta-footer">
-                        <div id="btn-ck" class="audio-btn" onclick="toggleAudio('audio/ck.m4a', 'btn-ck')">
+                        <div id="btn-ck" class="audio-btn" onclick="playM4A('btn-ck')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「タクタイル・フィードバックの心理的価値と耐久設計」</span>
+                            <audio src="audio/ck.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -524,9 +531,10 @@
                     <h2>3D PLUS：宇宙用半導体ソリューション</h2>
                     <p>従来の平面実装の限界を超え、チップを垂直に統合。放射線ガードと演算機能を極小パッケージに封じ込め、過酷な宇宙環境での「絶対的な信頼性」を実現する積層戦略。</p>
                     <div class="meta-footer">
-                        <div id="btn-3d" class="audio-btn" onclick="toggleAudio('audio/3d.m4a', 'btn-3d')">
+                        <div id="btn-3d" class="audio-btn" onclick="playM4A('btn-3d')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「3次元積層技術と放射線耐性の論理的帰結」</span>
+                            <audio src="audio/3d.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -557,9 +565,10 @@
                     <h2>高出力レーザー・光学熱対策システム</h2>
                     <p>高出力レーザーにおける「熱レンズ効果」によるビーム品質の劣化を、ALPAOの補償光学（AO）で解決。リアルタイムな波面制御により、極限環境下での安定した自動稼働を実現します。</p>
                     <div class="meta-footer">
-                        <div id="btn-netsu" class="audio-btn" onclick="toggleAudio('audio/netsu.m4a', 'btn-netsu')">
+                        <div id="btn-netsu" class="audio-btn" onclick="playM4A('btn-netsu')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「高出力レーザーの熱問題解決とALPAO補償光学の役割」</span>
+                            <audio src="audio/netsu.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -572,9 +581,10 @@
                     <h2>Pyxalis：光の物理限界を突破する撮像革命</h2>
                     <p>120dBの壁を超える超広ダイナミックレンジと、CDS（相関二重サンプリング）による極低ノイズ技術。1フレームで100万倍の階調を捉える、物理レイヤーからのアプローチ。</p>
                     <div class="meta-footer">
-                        <div id="btn-pyx" class="audio-btn" onclick="toggleAudio('audio/pyx.m4a', 'btn-pyx')">
+                        <div id="btn-pyx" class="audio-btn" onclick="playM4A('btn-pyx')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「120dB HDRとDual CVF：なぜソフトウェア合成では不十分なのか」</span>
+                            <audio src="audio/pyx.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -587,9 +597,10 @@
                     <h2>データセンター熱管理の再定義ソリューション</h2>
                     <p>AIの高密度演算が引き起こす「局所熱」は、もはや従来の点計測では捕捉不可能です。ボロメーターによる熱の面分布可視化と、Calumino等のプライバシー配慮型センサーによる、次世代の物理層監視プラットフォーム。</p>
                     <div class="meta-footer">
-                        <div id="btn-dcheat" class="audio-btn" onclick="toggleAudio('audio/dc-heat.m4a', 'btn-dcheat')">
+                        <div id="btn-dcheat" class="audio-btn" onclick="playM4A('btn-dcheat')">
                             <span class="audio-icon">▶️</span>
                             <span><strong>LISTEN:</strong> 「データセンター熱監視の盲点と、赤外線センシングによる予兆検知」</span>
+                            <audio src="audio/dc-heat.m4a" preload="none"></audio>
                         </div>
                     </div>
                 </div>
@@ -630,64 +641,64 @@
     </footer>
 </div>
 
-<audio id="global-audio-player" preload="auto" style="display:none;"></audio>
 <script>
-    let currentPlayingId = null;
-    const player = document.getElementById('global-audio-player');
+    let activeAudio = null;
+    let activeBtnId = null;
 
-    function toggleAudio(src, btnId) {
+    function playM4A(btnId) {
         const btn = document.getElementById(btnId);
+        const audio = btn.querySelector('audio');
         const icon = btn.querySelector('.audio-icon');
 
-        // モバイル・ブラウザの自動再生制限を解除するための儀式
-        if (typeof player.play !== 'function') return;
-
-        // 同じ音声がクリックされた場合
-        if (currentPlayingId === btnId) {
-            if (player.paused) {
-                player.play().catch(e => console.log("再生エラー:", e));
+        // 同じボタンが再度クリックされた場合はトグル制御
+        if (activeBtnId === btnId) {
+            if (audio.paused) {
+                audio.play().catch(err => {
+                    console.error(err);
+                    alert("ブラウザにより音声がブロックされました。一度画面内のどこかをクリックしてから再度ボタンを押してください。");
+                });
                 icon.textContent = '⏸️';
                 btn.classList.add('playing');
             } else {
-                player.pause();
+                audio.pause();
                 icon.textContent = '▶️';
                 btn.classList.remove('playing');
             }
             return;
         }
 
-        // 他の音声がすでに再生中だった場合はリセット
-        if (currentPlayingId) {
-            const oldBtn = document.getElementById(currentPlayingId);
+        // 他のオーディオが再生中なら停止してリセット
+        if (activeAudio) {
+            activeAudio.pause();
+            const oldBtn = document.getElementById(activeBtnId);
             if (oldBtn) {
                 oldBtn.querySelector('.audio-icon').textContent = '▶️';
                 oldBtn.classList.remove('playing');
             }
         }
 
-        // 新しいソースを設定して再生（絶対パス・相対パスの両方に対応）
-        player.src = src;
-        player.load(); // 確実に読み込ませる
-        
-        // ブラウザの非同期再生処理のキャッチ
-        player.play().then(() => {
+        // 音声をリロードして再生（パスずれ・フォーマットエラーの検知用）
+        audio.load();
+        audio.play().then(() => {
             icon.textContent = '⏸️';
             btn.classList.add('playing');
-            currentPlayingId = btnId;
-        }).catch(e => {
-            alert("音声の再生に失敗しました。ファイルパス（場所）か、ブラウザの音声許可を確認してください。");
-            console.error("Playback failed:", e);
+            activeAudio = audio;
+            activeBtnId = btnId;
+        }).catch(err => {
+            console.error("再生に失敗しました:", err);
+            alert("音声ファイルが見つからないか、ブラウザの制限で再生できません。\n\n【チェック項目】\n1. ファイルの拡張子が「.m4a」になっているか\n2. HTMLの隣に「audio」フォルダがあり、正しい名前で配置されているか");
         });
 
-        // 再生が終了した時の処理
-        player.onended = function() {
+        // 再生が最後まで終了したときの処理
+        audio.onended = function() {
             icon.textContent = '▶️';
             btn.classList.remove('playing');
-            currentPlayingId = null;
+            activeAudio = null;
+            activeBtnId = null;
         };
     }
 
-    // カードのホバー視差エフェクト
+    // 🚀 高級感を演出するホバー・グラスモフィズムエフェクト
     document.querySelectorAll('.custom-banner-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
