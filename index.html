@@ -630,7 +630,7 @@
     </footer>
 </div>
 
-<audio id="global-audio-player" style="display:none;"></audio>
+<audio id="global-audio-player" preload="auto" style="display:none;"></audio>
 <script>
     let currentPlayingId = null;
     const player = document.getElementById('global-audio-player');
@@ -639,10 +639,13 @@
         const btn = document.getElementById(btnId);
         const icon = btn.querySelector('.audio-icon');
 
-        // 同じ音声がクリックされた場合：一時停止または再開
+        // モバイル・ブラウザの自動再生制限を解除するための儀式
+        if (typeof player.play !== 'function') return;
+
+        // 同じ音声がクリックされた場合
         if (currentPlayingId === btnId) {
             if (player.paused) {
-                player.play();
+                player.play().catch(e => console.log("再生エラー:", e));
                 icon.textContent = '⏸️';
                 btn.classList.add('playing');
             } else {
@@ -662,12 +665,19 @@
             }
         }
 
-        // 新しいソースを設定して再生
+        // 新しいソースを設定して再生（絶対パス・相対パスの両方に対応）
         player.src = src;
-        player.play();
-        icon.textContent = '⏸️';
-        btn.classList.add('playing');
-        currentPlayingId = btnId;
+        player.load(); // 確実に読み込ませる
+        
+        // ブラウザの非同期再生処理のキャッチ
+        player.play().then(() => {
+            icon.textContent = '⏸️';
+            btn.classList.add('playing');
+            currentPlayingId = btnId;
+        }).catch(e => {
+            alert("音声の再生に失敗しました。ファイルパス（場所）か、ブラウザの音声許可を確認してください。");
+            console.error("Playback failed:", e);
+        });
 
         // 再生が終了した時の処理
         player.onended = function() {
@@ -677,7 +687,7 @@
         };
     }
 
-    // 🚀 インタラクティブなホバー視差エフェクト（モダンカード対応）
+    // カードのホバー視差エフェクト
     document.querySelectorAll('.custom-banner-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
